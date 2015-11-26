@@ -1,0 +1,17 @@
+#logfile
+export LOGFILE=/var/log/iipsrv.log
+#where images are stored
+export FILESYSTEM_PREFIX=/mnt/images/
+#verbosity for debugging put on 10
+export VERBOSITY=10
+#jpeg quality - the higher better, between 1 - 100
+export JPEG_QUALITY=90
+#internal image cache size in MB for each process
+export MAX_IMAGE_CACHE_SIZE=10
+#max resolution (height or width) of a single request
+export MAX_CVT=10000
+#maximal number of quality layers in JPEG2000 to use
+#IMPORTANT FOR JPEG2000 PERFORMANCE vs QUALITY
+export MAX_LAYERS=5
+#list of memcached servers
+export MEMCACHED_SERVERS=localhost
