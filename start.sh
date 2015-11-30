@@ -14,4 +14,7 @@ pidfile="/var/run/iipimage.pid"
 echo -n $spawnfcgi -a ${server_ip} -p ${server_port} -u ${server_user} -g ${server_group} -P ${pidfile} -F ${server_childs} -f ${iipimage_cgi}
 
 $spawnfcgi -a ${server_ip} -p ${server_port} -u ${server_user} -g ${server_group} -P ${pidfile} -F ${server_childs} -f ${iipimage_cgi}
+/usr/bin/memcached -u root &
 nginx -g "daemon off;"
+
+
