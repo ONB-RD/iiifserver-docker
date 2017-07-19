@@ -1,6 +1,6 @@
 FROM centos:7
 
-ENV KAKADU_VERSION v7_7-XXXXXN
+ENV KAKADU_VERSION v7_9_1-XXXXXX
 
 ADD nginx.repo /etc/yum.repos.d/
 RUN yum -y install epel-release && \
@@ -17,7 +17,7 @@ ADD $KAKADU_VERSION.zip /opt/
 RUN unzip /opt/$KAKADU_VERSION.zip -d /opt/ && \
 	export JAVA_HOME=/usr/lib/jvm/java-openjdk/ && \
 	cd /opt/$KAKADU_VERSION/make;make -f Makefile-Linux-x86-64-gcc && \
-	cp /opt/$KAKADU_VERSION/lib/Linux-x86-64-gcc/libkdu_v77R.so /usr/lib64/ && \
+	cp /opt/$KAKADU_VERSION/lib/Linux-x86-64-gcc/libkdu_v79R.so /usr/lib64/ && \
 	ln -s /usr/lib64/libkdu_v77R.so /usr/lib64/libkdu.so
 RUN cd /opt/;git clone https://github.com/klokantech/iiifserver.git && \
 	cd /opt/iiifserver;./autogen.sh && \
